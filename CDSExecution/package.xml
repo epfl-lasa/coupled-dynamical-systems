@@ -1,0 +1,28 @@
+<package>
+  <name>cds_execution</name>
+  <version>0.1.0</version>
+
+  <description>
+
+     CDS
+
+  </description>
+  <maintainer email="ashwini.shukla@epfl.ch">Ashwini</maintainer>
+  <author email="ashwini.shukla@epfl.ch">Ashwini</author>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/CDS</url>
+  <buildtool_depend>catkin</buildtool_depend> 
+
+  <build_depend>mathlib</build_depend>
+  <build_depend>gmr</build_depend>
+  <build_depend>cds</build_depend>
+  <build_depend>orocos_kdl</build_depend>
+
+  <run_depend>mathlib</run_depend>
+  <run_depend>gmr</run_depend>
+  <run_depend>cds</run_depend>
+  <run_depend>orocos_kdl</run_depend>
+
+</package>
+
+

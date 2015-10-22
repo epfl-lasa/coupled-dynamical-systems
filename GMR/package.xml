@@ -1,0 +1,24 @@
+<package>
+  <name>gmr</name>
+  <version>0.1.0</version>
+
+  <description>
+
+     GMR
+
+  </description>
+  <maintainer email="ashwini.shukla@epfl.ch">Ashwini</maintainer>
+  <author email="ashwini.shukla@epfl.ch">Ashwini</author>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/GMR</url>
+  <buildtool_depend>catkin</buildtool_depend> 
+
+  <build_depend>mathlib</build_depend>
+  <run_depend>mathlib</run_depend>
+
+  <export>
+    <rosdoc config="rosdoc.yaml" />
+  </export>
+</package>
+
+

@@ -1,0 +1,21 @@
+<package>
+  <name>cds</name>
+  <version>0.1.0</version>
+
+  <description>
+     CDS
+  </description>
+  <maintainer email="ashwini.shukla@epfl.ch">Ashwini</maintainer>
+  <author email="ashwini.shukla@epfl.ch">Ashwini</author>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/CDS</url>
+  <buildtool_depend>catkin</buildtool_depend> 
+
+  <build_depend>gmr</build_depend>
+  <build_depend>mathlib</build_depend>
+
+  <run_depend>gmr</run_depend>
+  <run_depend>mathlib</run_depend>
+</package>
+
+

@@ -83,11 +83,35 @@ void CDSExecution::initSimple(std::string base_path, int segmentID) {
 	_init();
 
 }
+
+void CDSExecution::initSimple(std::string base_path, int segmentID, std::string model_id) {
+
+
+	char sMaster[1025];
+	char sSlave[1025];
+	char sGMM[1025];
+
+	if (model_id==""){
+		sprintf(sMaster, "%s/Phase%d/masterGMM.txt", base_path.c_str(), segmentID);
+		sprintf(sSlave,  "%s/Phase%d/slaveGMM.txt", base_path.c_str(), segmentID);
+		sprintf(sGMM,    "%s/Phase%d/cplGMM.txt", base_path.c_str(), segmentID);
+	}
+	else{
+		sprintf(sMaster, "%s/Phase%d/masterGMM_%s.txt", base_path.c_str(), segmentID, model_id.c_str());
+		sprintf(sSlave,  "%s/Phase%d/slaveGMM.txt", base_path.c_str(), segmentID);
+		sprintf(sGMM,    "%s/Phase%d/cplGMM_%s.txt", base_path.c_str(), segmentID, model_id.c_str());
+	}
+	cdsCtrl = new CDSController(sMaster, sSlave, sGMM);
+
+	_init();
+
+}
+
 void CDSExecution::initSimple(int segmentID){
 
         char sMaster[256];
         char sSlave[256];
-        char sGMM[256];
+        char sGMM[256];        
 
         sprintf(sMaster, "data/packages/CDSPlotRF/Models/s%d/masterGMM.txt", segmentID);
         sprintf(sSlave,  "data/packages/CDSPlotRF/Models/s%d/slaveGMM.txt", segmentID);

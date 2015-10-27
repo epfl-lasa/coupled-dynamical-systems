@@ -39,22 +39,19 @@ before_install:
   - cd ~/catkin_ws/src
   - catkin_init_workspace
 
-  # robot toolkit has an intricate circular dependency: to compile RTK you must
-  # source RTK's setup.bash. yikes. The easiest way to do this is to call
-  # catkin_make with no ROS packages (this creates devel/setup.bash) and then
-  # source this file (this sets the path correctly) *before* adding the
-  # repository.
+  # Create the devel/setup.bash (run catkin_make with an empty workspace) and
+  # source it.
   - cd ~/catkin_ws
   - catkin_make
   - source devel/setup.bash
 
-  # Add robot-toolkit only *after* setting up the path.
+  # Add the package under test to the workspace.
   - cd ~/catkin_ws/src
   - ln -s $CI_SOURCE_PATH . # Link the repo we are testing to the new workspace
 
   # Use wstool to handle dependencies
   - wstool init
-  - if [[ -f $ROSINSTALL_FILE ]] wstool merge $ROSINSTALL_FILE
+  - if [[ -f $ROSINSTALL_FILE ]] ; then wstool merge $ROSINSTALL_FILE ; fi
   - wstool up
 
 before_script:

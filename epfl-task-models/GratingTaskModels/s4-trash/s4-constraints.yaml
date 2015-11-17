@@ -1,0 +1,52 @@
+id: 4.0
+object: bowl_root
+attractor:
+- [-1.0, 0.0, 0.0, 0.0]
+- [0.0, 1.0, 0.0, 0.15]
+- [0.0, 0.0, -1.0, 0.35]
+- [0.0, 0.0, 0.0, 1.0]
+threshold: 0.002
+model:
+- modeltype: CDS
+  modelfile:
+  - name: masterGMM.txt
+    dt: 0.02
+    gmmtype: Master
+    input:
+      type: Position
+      dim: [x, y, z]
+    output:
+      type: Velocity
+      dim: [x, y, z]
+  - name: slaveGMM.txt
+    dt: 0.02
+    gmmtype: Slave
+    input:
+      type: Orientation
+      dim: [x, y, z]
+    output:
+      type: Velocity
+      dim: [x, y, z]
+  - name: cplGMM.txt
+    dt: 0.02
+    gmmtype: Coupling
+    input:
+      type: Other
+      dim: ['*', '*']
+    output:
+      type: Other
+      dim: ['*']
+- modeltype: GMR
+  modelfile:
+  - name: stiffnessGMM.txt
+    dt: 0.02
+    input:
+      type: Position_Error
+      dim: [x^, y^, z^]
+    output:
+      type: Stiffness
+      dim: [x, y, z]
+  - name: []
+    dt: []
+    input: []
+    output: []

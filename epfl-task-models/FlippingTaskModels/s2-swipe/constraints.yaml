@@ -1,0 +1,35 @@
+id: 2.0
+object: oven
+attractor:
+- [-0.4255,   -0.4508,    0.7847,   -0.2345]
+- [-0.2966,    0.8887,    0.3497,    0.0273]
+- [-0.8550,   -0.0840,   -0.5118,    0.1995]
+- [ 0.0   ,    0.0   ,    0.0   ,    1.0000]
+threshold: 0.0020
+model:
+- modeltype: CDS
+  modelfile:
+  - name: masterDyn.gmm
+    gmmtype: Master
+    input:
+      type: Position
+      dim: [x, y, z]
+    output:
+      type: Velocity
+      dim: [x, y, z]
+  - name: slaveDyn.gmm
+    gmmtype: Slave
+    input:
+      type: Orientation
+      dim: [x, y, z]
+    output:
+      type: Velocity
+      dim: [x, y, z]
+  - name: couplingDyn.gmm
+    gmmtype: Coupling
+    input:
+      type: Other
+      dim: ['*', '*']
+    output:
+      type: Other
+      dim: ['*']

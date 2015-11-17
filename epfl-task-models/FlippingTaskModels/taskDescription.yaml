@@ -1,0 +1,9 @@
+id: 4.0
+name: flipping
+tool: spatula
+aprox_duration: 5.0
+segment:
+- {name: reach, id: 1.0, transition_condition: attractor_reached, result: x^ = 0; y^ = 0; z^ = 0}
+- {name: swipe, id: 2.0, transition_condition: attractor_reached, result: x^ = 0; y^ = 0; z^ = 0}
+- {name: flip, id: 3.0, transition_condition: attractor_reached, result: x^ = 0; y^ = 0; z^ = 0}
+- {name: back, id: 4.0, transition_condition: attractor_reached, result: x^ = 0; y^ = 0; z^ = 0}

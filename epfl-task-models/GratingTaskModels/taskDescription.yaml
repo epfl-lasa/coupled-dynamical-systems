@@ -1,0 +1,9 @@
+id: 1.0
+name: grating
+tool: holder_tool
+aprox_duration: 25.0
+segment:
+- {name: reach, id: 1.0, trials: 1.0, transition_condition: attractor_reached, result: x^ = 0; y^ = 0; z^ = 0}
+- {name: grate, id: 2.0, trials: 5.0, transition_condition: attractor_reached, result: x^ = 0; y^ = 0; z^ = 0}
+- {name: back, id: 3.0, trials: 4.0, transition_condition: Fz > 5, result: x^ = 0; y^ = 0; z^ = 0}
+- {name: trash, id: 4.0, trials: 1.0, transition_condition: none, result: x^ = 0; y^ = 0; z^ = 0}

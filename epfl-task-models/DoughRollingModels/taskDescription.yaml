@@ -1,0 +1,11 @@
+id: 5.0
+name: rolling
+tool: roller
+object: dough
+sequence: {1: Phase1, 2: Phase2, 3: Phase3}
+sequence_direction: {object: dough, property:principal component, condition: 2nd}
+stop_condition: {object: dough, property:area, condition: 0.045}
+segment:
+- {name: Phase1, id: 1.0, trials: 1.0, transition_condition: attractor_reached, result: x^ = 0; y^ = 0; z^ = 0}Untitled Document 1
+- {name: Phase2, id: 2.0, trials: 1.0, transition_condition: Fz > 30 and attractor_reached, result: x^ = 0; y^ = 0; z^ = 0}
+- {name: Phase3, id: 3.0, trials: 1.0, transition_condition: attractor_reached, result: x^ = 0; y^ = 0; z^ = 0}

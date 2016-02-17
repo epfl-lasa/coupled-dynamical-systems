@@ -18,4 +18,4 @@ To learn a CDS with both master/slave dynamics governed by a SEDS model you can 
 ```
 https://bitbucket.org/khansari/seds
 ```
-You can find it in SEDS/Extensions/CDSv1. Here you can find the code to learn the GMM parameters which are fed to CDSExecution class.
+You can find it in SEDS/Extensions/CDSv1, where the GMM parameters of each dynamical systems are stored. These are then fed to CDSExecution class.

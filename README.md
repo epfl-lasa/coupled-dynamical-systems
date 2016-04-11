@@ -19,3 +19,25 @@ To learn a CDS with both master/slave dynamics governed by a SEDS model you can 
 https://bitbucket.org/khansari/seds
 ```
 You can find it in SEDS/Extensions/CDSv1, where the GMM parameters of each dynamical systems are stored. These are then fed to CDSExecution class.
+
+
+###Usage
+
+	
+	CDSExecution *cdsRun = new CDSExecution;
+	cdsRun->initSimple(model_base_path);
+	cdsRun->setObjectFrame(object_frame);
+	cdsRun->setAttractorFrame(attractor_frame);
+	cdsRun->setCurrentEEPose(curr_ee_pose);
+	cdsRun->setDT(model_dt);
+	cdsRun->setMotionParameters(0.5,1,1,reachingThreshold, masterType, slaveType);
+  cdsRun->postInit();
+	
+	start loop  
+		// set current ee pose  
+		cdsRun->setCurrentEEPose(curr_ee_pose);  
+		// Update DS and get next ee pose   
+		cdsRun->getNextEEPose(des_ee_pose);    
+		  
+	end loop  
+  

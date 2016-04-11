@@ -31,7 +31,7 @@ You can find it in SEDS/Extensions/CDSv1, where the GMM parameters of each dynam
 	cdsRun->setCurrentEEPose(curr_ee_pose);
 	cdsRun->setDT(model_dt);
 	cdsRun->setMotionParameters(0.5,1,1,reachingThreshold, masterType, slaveType);
-  cdsRun->postInit();
+	cdsRun->postInit();
 	
 	start loop  
 		// set current ee pose  

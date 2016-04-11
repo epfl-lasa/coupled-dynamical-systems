@@ -25,7 +25,7 @@ You can find it in SEDS/Extensions/CDSv1, where the GMM parameters of each dynam
 
 	
 	CDSExecution *cdsRun = new CDSExecution;
-	cdsRun->initSimple(model_base_path);
+	cdsRun->init(masterDyn, slabeDyn, coupling);
 	cdsRun->setObjectFrame(object_frame);
 	cdsRun->setAttractorFrame(attractor_frame);
 	cdsRun->setCurrentEEPose(curr_ee_pose);

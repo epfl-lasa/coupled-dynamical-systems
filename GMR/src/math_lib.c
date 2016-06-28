@@ -104,6 +104,7 @@ unsigned int matsvdinvall( double **mat, int m, int n, double singular_tolleranc
 		}
 	}
 
+        free(index_dof);
 	return rank;
 }
 
@@ -150,6 +151,7 @@ unsigned int matsvdinv( double **mat, int m, int n, double **out_mat)
 		}
 	}
 
+        free(index_dof);
 	return rank;
 }
 
@@ -196,6 +198,7 @@ unsigned int matsvdinvDLS( double **mat, int m, int n, double lamda, double **ou
 		}
 	}
 
+        free(index_dof);
 	return rank;
 }
 
@@ -2671,5 +2674,3 @@ void PositionAxisAngle_from_T( double T[][4], double *out )
 	}
 	out[6] = theta;
 }
-
-

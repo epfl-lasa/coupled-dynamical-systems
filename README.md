@@ -16,6 +16,11 @@ $ git clone  https://github.com/epfl-lasa/robot-toolkit.git
 ###Learning CDS:
 To learn a CDS with both master/slave dynamics governed by a SEDS model you can use the code in:
 ```
+https://github.com/alpais/cds_model_learning_generic
+```
+
+To learn independent SEDS models:
+```
 https://bitbucket.org/khansari/seds
 ```
 You can find it in SEDS/Extensions/CDSv1, where the GMM parameters of each dynamical systems are stored. These are then fed to CDSExecution class.

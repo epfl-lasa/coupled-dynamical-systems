@@ -46,7 +46,9 @@ public:
 	void init(GMRDynamics* masterDyn, GMRDynamics* slaveDyn, GMR* coupling);
 	void initSimple(int segmentID);
 	void initSimple(std::string base_path, int segmentID);
-	void initSimple(std::string base_path, int segmentID, std::string model_id);
+    void initSimple(std::string base_path, int segmentID, int armID);
+    void initSimple(std::string base_path, int segmentID, int armID, std::string role);
+    void initSimple(std::string base_path, int segmentID, std::string model_id);
     void postInit();
 
 	void setObjectFrame(const MathLib::Matrix4& mObjectPose);

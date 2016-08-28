@@ -84,6 +84,52 @@ void CDSExecution::initSimple(std::string base_path, int segmentID) {
 
 }
 
+void CDSExecution::initSimple(std::string base_path, int segmentID, int armID) {
+
+
+    char sMaster[1025];
+    char sSlave[1025];
+    char sGMM[1025];
+
+    string arm;
+    if (armID == 1)
+        arm = "Right";
+    if (armID == 2)
+        arm = "Left";
+
+    sprintf(sMaster, "%s/Phase%d/%s/masterGMM.txt", base_path.c_str(), segmentID, arm.c_str());
+    sprintf(sSlave,  "%s/Phase%d/%s/slaveGMM.txt", base_path.c_str(),  segmentID, arm.c_str());
+    sprintf(sGMM,    "%s/Phase%d/%s/cplGMM.txt", base_path.c_str(),  segmentID, arm.c_str());
+
+    cdsCtrl = new CDSController(sMaster, sSlave, sGMM);
+
+    _init();
+
+}
+
+void CDSExecution::initSimple(std::string base_path, int segmentID, int armID, std::string role) {
+
+
+    char sMaster[1025];
+    char sSlave[1025];
+    char sGMM[1025];
+
+    string arm;
+    if (armID == 1)
+        arm = "Right";
+    if (armID == 2)
+        arm = "Left";
+
+    sprintf(sMaster, "%s/Phase%d/%s/%s_posGMM.txt", base_path.c_str(), segmentID, arm.c_str(), role.c_str());
+    sprintf(sSlave,  "%s/Phase%d/%s/%s_oriGMM.txt", base_path.c_str(),  segmentID, arm.c_str(), role.c_str());
+    sprintf(sGMM,    "%s/Phase%d/%s/%s_cplGMM.txt", base_path.c_str(),  segmentID, arm.c_str(), role.c_str());
+
+    cdsCtrl = new CDSController(sMaster, sSlave, sGMM);
+
+    _init();
+
+}
+
 void CDSExecution::initSimple(std::string base_path, int segmentID, std::string model_id) {
 
 
